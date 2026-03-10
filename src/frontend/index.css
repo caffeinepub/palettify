@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Fonts ──────────────────────────────────────────────── */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree[wght].woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* Pastel light theme */
+    --background: 0.97 0.012 60;
+    --foreground: 0.22 0.04 270;
+
+    --card: 0.99 0.005 60;
+    --card-foreground: 0.22 0.04 270;
+
+    --popover: 0.99 0.005 60;
+    --popover-foreground: 0.22 0.04 270;
+
+    /* Primary: soft rose-pink */
+    --primary: 0.62 0.16 350;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: soft lavender */
+    --secondary: 0.93 0.035 290;
+    --secondary-foreground: 0.3 0.06 290;
+
+    --muted: 0.94 0.018 80;
+    --muted-foreground: 0.5 0.05 280;
+
+    /* Accent: soft mint */
+    --accent: 0.9 0.06 165;
+    --accent-foreground: 0.25 0.07 165;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.88 0.025 290;
+    --input: 0.9 0.02 290;
+    --ring: 0.62 0.16 350;
+
+    /* Pastel palette tokens */
+    --pastel-pink: 0.88 0.09 355;
+    --pastel-lavender: 0.88 0.07 290;
+    --pastel-peach: 0.9 0.07 50;
+    --pastel-mint: 0.88 0.08 165;
+    --pastel-sky: 0.88 0.07 225;
+    --pastel-butter: 0.93 0.08 90;
+    --pastel-lilac: 0.85 0.09 310;
+
+    --chart-1: 0.62 0.16 350;
+    --chart-2: 0.65 0.12 290;
+    --chart-3: 0.68 0.13 165;
+    --chart-4: 0.7 0.14 50;
+    --chart-5: 0.65 0.12 225;
+
+    --sidebar: 0.97 0.012 60;
+    --sidebar-foreground: 0.22 0.04 270;
+    --sidebar-primary: 0.62 0.16 350;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.93 0.035 290;
+    --sidebar-accent-foreground: 0.3 0.06 290;
+    --sidebar-border: 0.88 0.025 290;
+    --sidebar-ring: 0.62 0.16 350;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 80% 10%, oklch(0.88 0.07 290 / 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 35% at 10% 90%, oklch(0.88 0.09 355 / 0.25) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 30% at 50% 50%, oklch(0.9 0.07 50 / 0.15) 0%, transparent 70%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* ── Pastel card glow shadows ──────────────────────────── */
+.card-glow-pink  { box-shadow: 0 4px 24px oklch(0.7 0.15 355 / 0.2); }
+.card-glow-lav   { box-shadow: 0 4px 24px oklch(0.65 0.12 290 / 0.2); }
+.card-glow-peach { box-shadow: 0 4px 24px oklch(0.7 0.14 50 / 0.2); }
+.card-glow-mint  { box-shadow: 0 4px 24px oklch(0.68 0.13 165 / 0.2); }
+.card-glow-sky   { box-shadow: 0 4px 24px oklch(0.65 0.12 225 / 0.2); }
